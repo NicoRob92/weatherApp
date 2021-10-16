@@ -93,7 +93,7 @@ export default function Card(props){
 
     return (
         <Conteiner>
-        <button onClose={props.onClose}>X</button>
+        <button onClick={()=> props.onClose(props.id)}>X</button>
         <Link to={`/${props.id}`}style={{ textDecoration: 'none' }}><h1>{props.name}</h1></Link>
         <h4>Max: {props.max} °C</h4>
         <h5>Min: {props.min} °C</h5>

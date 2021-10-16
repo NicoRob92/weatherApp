@@ -49,7 +49,7 @@ function App() {
     <Route exact path="/">
     <Fondo className="App">
       <NavBar onSearch={onSearch}/>
-    <Cards cities={Cities} onClose={(e) => onClose(e.id)}/>
+    <Cards cities={Cities} onClose={onClose}/>
     </Fondo>
     </Route>
     <Route path="/about">
