@@ -42,9 +42,13 @@ function App() {
     <Route exact path="/">
     <Fondo>{/* //BACKGROUND APP */}
       <NavBar onSearch={onSearch}/>
+<<<<<<< HEAD
       <Card>{/* //BACKGROUND Cards */}
     <Cards cities={Cities} onClose={onClose}/>
       </Card>
+=======
+    <Cards cities={Cities} onClose={onClose}/>
+>>>>>>> 3d211c41766cab6d4cbdb3f0745c91589d2ad45b
     </Fondo>
     </Route>
     <Route path="/about">

@@ -16,9 +16,14 @@ export default function Cards({cities,onClose}){
                 img={e.img}
                 id={e.id}
                 onClose={onClose}
+<<<<<<< HEAD
                
                 />)
         )
+=======
+                />
+        ))
+>>>>>>> 3d211c41766cab6d4cbdb3f0745c91589d2ad45b
     }
     else{
         return(

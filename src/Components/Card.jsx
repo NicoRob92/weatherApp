@@ -6,10 +6,14 @@ export default function Card(props){
 
     return (
         <Conteiner>
+<<<<<<< HEAD
         <Btn>
         <button onClick={(e) => props.onClose(props.id)}>X</button>
         </Btn>
         <City>
+=======
+        <button onClick={()=> props.onClose(props.id)}>X</button>
+>>>>>>> 3d211c41766cab6d4cbdb3f0745c91589d2ad45b
         <Link to={`/${props.id}`}style={{ textDecoration: 'none' }}><h1>{props.name}</h1></Link>
         <span></span>    
         </City>
