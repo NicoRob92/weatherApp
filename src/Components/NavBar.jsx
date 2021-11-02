@@ -2,72 +2,87 @@ import React from "react";
 import styled from 'styled-components';
 import SearchBar from './SearchBar.jsx';
 import { Link } from "react-router-dom";
-
-const Container = styled.div`
-background: linear-gradient(
-    to left, 
-    hsl(148 60% 40%), 
-    hsl(54 50% 80%)
-  );
-border-radius:4px
-display:inline;
-& h1{
-    display:block;
-    width:250px;
-    position:relative;
-    text-shadow:#264204 1.4px 2px;
-    font-family: fantasy,'oldtown';
-    font-variant:small-caps;
-    font-style:oblique;
-    font-size:35px;
-    color:#45977a;
-}
-height:80px
-`;
-
-const Home=styled.button`
-position:absolute;
-left:30px;
-top:75px;
-background:black;
-border:none;
-color:white;
-border-radius:2px;
-&: hover{
-    background-color:#043121;
-    transition:.4s;
-}
-
-`;
-const About=styled.button`
-position:absolute;
-left:90px;
-top:75px;
-background:black;
-border:none;
-border-radius:2px;
-color:white;
-&: hover{
-    background-color:#043121;
-    transition:.4s;
-}
-
-`;
-
-
-
-
-
+import './fuente.css'
 
 
 export default function NavBar({onSearch}){
     return(
         <Container>
-            <h1>The Weather App</h1>
-            <Link to="/"><Home> Home </Home></Link>
-            <Link to="/about"><About>About</About></Link>
+            <Titulo><h1>The Weather App</h1> </Titulo>
+            <Buttons>
+            <Link to="/"><button> <span>‏‏‎‏‏‎‎ ‏‏‎‎‏‏‎‏‏‎‎ ‏‏‎‎Home‏‏‎‏‏‎‎ ‏‏‎‎‏‏‎‏‏‎‎ ‏‏‎‎</span></button></Link>
+            <Link to="/about"><button> <span>About</span></button></Link>
+            </Buttons>
             <SearchBar onSearch={onSearch}/>
 
         </Container>
     )
 }
+
+
+const Container = styled.div`
+display: flex;
+justify-content: space-around;
+border-style:double;
+
+border-top:none;
+`;
+const Titulo=styled.div`
+& h1{
+    font-family: 'Courgette', cursive;
+    font-size:2rem;
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff, 
+                 0 0 40px #fff;
+    transition:.5s;
+    
+    
+    
+} 
+`;
+
+
+const Buttons= styled.div`
+display: flex;
+align-items: center;
+flex-wrap: nowrap;
+justify-content: space-around;
+width: 20%;
+
+
+
+
+& button {
+    color: #FFF;
+    border-radius: 7%;      
+    background: transparent;
+    overflow: hidden;
+    border:none;
+    
+  & span {
+    display:flex;
+    flex-direction:row;
+    font-family: 'Arima Madurai', cursive;
+    
+    text-shadow: 0 0 100px #fff,
+    0 0 10px #fff, 
+    0 0 40px #fff;
+    transition:.5s;
+    font-size: 1rem;
+    
+    :hover {/*HoverEffect*/
+        -webkit-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+        transition: .5s
+      }
+    }
+  
+  
+} 
+`;
+
+
+
+

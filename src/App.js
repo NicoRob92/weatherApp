@@ -4,15 +4,8 @@ import { BrowserRouter , Route} from 'react-router-dom';
 import About from './Components/About';
 import Cards from './Components/Cards.jsx';
 import styled from 'styled-components';
+import City from './Components/City';
 
-const Fondo=styled.div`
-display:inline-block;
-width:100%;
-height:1000px;
-background:url("https://th.bing.com/th/id/R.5207680e1eafd7233ab094b5f910e6af?rik=KZhkKFGKm4lhhQ&riu=http%3a%2f%2fbestanimations.com%2fNature%2fWater%2frain%2frain-nature-animated-gif-21.gif&ehk=lBF1ql92mhoIINxp3h%2b18XZodQzsNC5qwcJwiXoS0Jg%3d&risl=&pid=ImgRaw&r=0");
-background-size:100% 100%;
-
-`;
  
 function App() {
   const [Cities, setCities] = useState([])
@@ -47,9 +40,11 @@ function App() {
     <BrowserRouter>
     
     <Route exact path="/">
-    <Fondo className="App">
+    <Fondo>{/* //BACKGROUND APP */}
       <NavBar onSearch={onSearch}/>
-    <Cards cities={Cities} onClose={(e) => onClose(e.id)}/>
+      <Card>{/* //BACKGROUND Cards */}
+    <Cards cities={Cities} onClose={onClose}/>
+      </Card>
     </Fondo>
     </Route>
     <Route path="/about">
@@ -58,9 +53,32 @@ function App() {
       <About/>
       </Fondo>
     </Route>
+    {/* <Route path= "/City/:id">
+
+    </Route>
+      <City/> */}
     </BrowserRouter>
   );
 }
   
 
 export default App;
+
+
+const Fondo=styled.div`
+display:flex;
+flex-direction:column;
+width:100vw;
+height:100vh;
+background:url('https://th.bing.com/th/id/R.e1139e26555d9325b5df67c5efa72912?rik=b9s%2bUh5aST9%2fTw&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f9%2f1%2fe%2f168436.jpg&ehk=8B7XoAxEElKs6vly5bZsGVBS6IOIMPPs2ajLohzvt3s%3d&risl=&pid=ImgRaw&r=0');
+background-size:cover;
+`;
+
+const Card = styled.div`
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-content: space-around;
+justify-content: space-around;
+height:100vh;
+`;

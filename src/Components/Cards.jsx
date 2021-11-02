@@ -3,6 +3,10 @@ import Card from "./Card";
 
 export default function Cards({cities,onClose}){
     if(cities){
+        
+        if(cities.length > 10){
+            cities.shift()
+        }
         return(
             cities.map(e=> <Card
                 name={e.name}
@@ -10,8 +14,9 @@ export default function Cards({cities,onClose}){
                 max={e.max}
                 min={e.min}
                 img={e.img}
-                onClose={(e) => onClose(e.id)}
                 id={e.id}
+                onClose={onClose}
+               
                 />)
         )
     }
