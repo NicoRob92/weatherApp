@@ -1,0 +1,37 @@
+.conteinerg{
+    display:flex;
+    border-radius: 12px;
+    background-color: rgba(39,255,255,0.1);
+    backdrop-filter:blur(4px);
+    flex-direction:column;
+    align-items:flex-start;
+    align-content: flex-start;
+    justify-content: center;
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 0,0, .5);
+    height: 50%;
+    
+    }
+
+.title{
+        font-family: 'Courgette', cursive; 
+        font-size: 1.6rem;
+        color: #fff;
+        text-shadow: 0 0 10px #000,
+                     0 0 20px #000, 
+                     0 0 40px #fff;
+       
+}
+.parrafo{
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    
+}
+
+.central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}

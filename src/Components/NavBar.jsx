@@ -24,8 +24,10 @@ const Container = styled.div`
 display: flex;
 justify-content: space-around;
 border-style:double;
-
+backdrop-filter:blur(2px);
 border-top:none;
+border-left:none;
+border-right:none;
 `;
 const Titulo=styled.div`
 & h1{
@@ -36,10 +38,25 @@ const Titulo=styled.div`
                  0 0 20px #fff, 
                  0 0 40px #fff;
     transition:.5s;
-    
-    
-    
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-start   
 } 
+@keyframes slidein {
+    0%{ text-shadow: 0 0 10px #000,0 0 5px #000,0 0 40px #000;}
+    1%{ text-shadow: 0 0 10px #fff,0 0 5px #fff,0 0 40px #fff;}
+    20%{ text-shadow: 0 0 10px #000,0 0 5px #000,0 0 40px #000;}
+    21%{ text-shadow: 0 0 10px #fff,0 0 5px #fff,0 0 40px #fff;}
+    30%{ text-shadow: 0 0 10px #000,0 0 5px #000,0 0 40px #000;}
+    31%{ text-shadow: 0 0 10px #fff,0 0 5px #fff,0 0 40px #fff;}
+    50%{ text-shadow: 0 0 10px #000,0 0 5px #000,0 0 40px #000;}
+    51%{ text-shadow: 0 0 10px #fff,0 0 5px #fff,0 0 40px #fff;}
+    90%{ text-shadow: 0 0 10px #000,0 0 5px #000,0 0 40px #000;}
+    97%{ text-shadow: 0 0 10px #fff,0 0 5px #fff,0 0 40px #fff;}
+    
+}
+
 `;
 
 
@@ -48,11 +65,8 @@ display: flex;
 align-items: center;
 flex-wrap: nowrap;
 justify-content: space-around;
-width: 20%;
-
-
-
-
+width: 30%;
+margin-left:10%;
 & button {
     color: #FFF;
     border-radius: 7%;      

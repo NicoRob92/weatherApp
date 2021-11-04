@@ -21,6 +21,9 @@ function App() {
             min: Math.round(recurso.main.temp_min),
             max: Math.round(recurso.main.temp_max),
             img: recurso.weather[0].icon,
+            weather: recurso.weather[0].description,
+            termica: recurso.main.feels_like,
+            humidity: recurso.main.humidity,
             id: recurso.id,
             wind: recurso.wind.speed,
             temp: recurso.main.temp,
@@ -36,31 +39,42 @@ function App() {
         }
       });
   }
+
+  function onFilter(ciudadId) {
+    let ciudad = Cities.filter(c => c.id === parseInt(ciudadId));
+    if(ciudad.length > 0) {
+        return ciudad[0];
+    } else {
+        return null;
+    }
+  }
+
   return (
     <BrowserRouter>
-    
-    <Route exact path="/">
-    <Fondo>{/* //BACKGROUND APP */}
+    <Fondo>
+    {/* ================= */}
+    <Route exact path="/">   
       <NavBar onSearch={onSearch}/>
-<<<<<<< HEAD
-      <Card>{/* //BACKGROUND Cards */}
-    <Cards cities={Cities} onClose={onClose}/>
+      <Card>
+      <Cards cities={Cities} onClose={onClose}/>
       </Card>
-=======
-    <Cards cities={Cities} onClose={onClose}/>
->>>>>>> 3d211c41766cab6d4cbdb3f0745c91589d2ad45b
-    </Fondo>
-    </Route>
+    </Route> 
+    {/* ================= */}
     <Route path="/about">
-      <Fondo>
     <NavBar onSearch={onSearch}/>
-      <About/>
-      </Fondo>
+    <Ciudad>
+    <About/>
+    </Ciudad>
     </Route>
-    {/* <Route path= "/City/:id">
-
+    {/* ================= */}
+    <Route path= "/City/:id" >
+    <NavBar onSearch={onSearch}/>
+    <Ciudad>
+    <Route render={({match}) => (<City city={onFilter(match.params.id)}/>)}/>
+    </Ciudad>
     </Route>
-      <City/> */}
+    
+    </Fondo>
     </BrowserRouter>
   );
 }
@@ -84,5 +98,12 @@ flex-wrap: wrap;
 flex-direction: row;
 align-content: space-around;
 justify-content: space-around;
-height:100vh;
+height:99vh;
+`;
+const Ciudad = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+height:99vh;
+
 `;
